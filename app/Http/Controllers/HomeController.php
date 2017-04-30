@@ -195,7 +195,13 @@ class HomeController extends Controller
 
     public function postContactUs(Request $request)
     {
-        $contact = new Contact();
+        $contact              = new Contact();
+        $contact->email = $request->email;
+        $contact->subject = $request->subject;
+        $contact->message = $request->message;
+        $contact->save();
+        return redirect()->back()->with('noti', "Cảm ơn bạn đã quan tâm đến cửa hàng của chúng tôi, Chúng tôi sẽ trả lời bạn trong một email sớm nhất có thể !");
+
     }
 
 

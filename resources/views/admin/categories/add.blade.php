@@ -41,7 +41,6 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <select name="status" class="form-control form-float show-tick" required>
-                                            <option value="0">Un publish </option>
                                             <option value="1" selected>Live </option>
                                             <option value="2">Disable </option>
                                         </select>

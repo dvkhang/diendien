@@ -23,6 +23,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
         Route::get('/list', 'CategoryController@getList');
 
+        Route::get('/detail/{id}', 'CategoryController@getDetail');
+
         Route::get('/edit/{id}', 'CategoryController@getEdit');
         Route::post('/edit/{id}', 'CategoryController@postEdit');
         //

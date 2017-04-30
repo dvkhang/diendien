@@ -23,7 +23,7 @@ class Category extends Model implements HasMedia
     public function product(){
         return $this->hasMany('App\Product', 'category_id');
     }
-    public function getName($id){
-        return Category::find($id)->name;
+    public function getParent($id){
+        return Category::find($id);
     }
 }

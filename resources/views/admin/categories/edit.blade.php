@@ -6,12 +6,6 @@
     ]
 ])
 @section('content')
-
-            <div class="block-header">
-                <h2>
-                    Sửa Danh Mục
-                </h2>
-            </div>
             <!-- Basic Validation -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -22,20 +16,62 @@
                         <div class="body">
                             <form id="form_validation" method="POST" action="{{url('admin/category/edit', ['id'=>$category->id])}}" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="name" value="{{$category->name}}" required>
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label" >
+                                        <label for="email_address_2">Tên danh mục</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" name="name" placeholder="AAAA" value="{{old('name') ? old('name') : $category->name}}" required>
+                                            </div>
+                                            @if ($errors->has('name'))
+                                                <p class="error">{{ $errors->first('name') }}</p>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <select name="status" class="form-control form-float show-tick" id="">
-                                            <option value="0" {{$category->status ==0 ? 'selected' : ''}}>Un publish </option>
-                                            <option value="1" {{$category->status ==1 ? 'selected' : ''}}>Live </option>
-                                            <option value="2" {{$category->status ==2 ? 'selected' : ''}}>Disable </option>
-                                        </select>
+
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label" >
+                                        <label for="email_address_2">Danh mục cha</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <select name="parent" class="form-control form-float show-tick" id="">
+                                                    <option value="">--- Chọn danh mục cha ---</option>
+                                                    @foreach($categories as $item)
+                                                        <option value="{{$item->id}}" {{$category->parent_id == $item->id ? "selected" : ""}}>{{$item->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            @if ($errors->has('name'))
+                                                <p class="error">{{ $errors->first('name') }}</p>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
+
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label" >
+                                        <label for="email_address_2">Trạng thái</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <select name="status" class="form-control form-float show-tick" id="">
+                                                    <option value="1" {{$category->status ==1 ? 'selected' : ''}}>Live </option>
+                                                    <option value="2" {{$category->status ==2 ? 'selected' : ''}}>Disable </option>
+                                                </select>
+                                            </div>
+                                            @if ($errors->has('status'))
+                                                <p class="error">{{ $errors->first('status') }}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Danh mục tiêu biểu</label>

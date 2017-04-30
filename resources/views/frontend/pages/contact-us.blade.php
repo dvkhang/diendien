@@ -1,4 +1,3 @@
-
 @extends('frontend.templates.master', [
     'title' => 'Liên hệ với chúng tôi',
     'include'=>[],
@@ -13,6 +12,11 @@
             <span class="navigation-pipe">&nbsp;</span>
             <span class="navigation_page">Liên hệ với chúng tôi</span>
         </div>
+        @if (session('noti'))
+            <div class="alert alert-success">
+                {{ session('noti') }}
+            </div>
+        @endif
         <!-- ./breadcrumb -->
         <!-- page heading-->
         <h2 class="page-heading">

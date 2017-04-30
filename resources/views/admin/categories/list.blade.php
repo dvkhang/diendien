@@ -33,9 +33,10 @@
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                 <thead>
                                 <tr>
+                                    <th>Hình ảnh</th>
                                     <th>Tên Danh Mục</th>
                                     <th>Danh Mục Cha</th>
-                                    <th>Ngày tạo</th>
+                                    {{-- <th>Ngày tạo</th> --}}
                                     <th>Trạng Thái</th>
                                     <th>Hành Động</th>
                                 </tr>
@@ -43,9 +44,10 @@
 
                                 <tfoot>
                                 <tr>
+                                    <th>Hình ảnh</th>
                                     <th>Tên Danh Mục</th>
                                     <th>Danh Mục Cha</th>
-                                    <th>Ngày tạo</th>
+                                    {{-- <th>Ngày tạo</th> --}}
                                     <th>Trạng Thái</th>
                                     <th>Hành Động</th>
                                 </tr>
@@ -53,23 +55,22 @@
                                 <tbody>
                                 @foreach($categories as $category)
                                         <tr>
-                                            <td>{{$category->name}}</td>
+                                            @if(isset($category->getMedia('image')[0]))
+                                            <td><img src="{{url('media', ['disk'=> $category->getMedia('image')[count($category->getMedia('image'))-1]->id,'filename'=>$category->getMedia('image')[count($category->getMedia('image'))-1]->file_name])}}" height="100" width="100"></td>
+                                                @else
+                                                <td><img src="" alt=""></td>
+                                            @endif
+                                            
+                                            <td><a href="{{url('admin/category/detail', ['id'=>$category->id])}}">{{$category->name}}</a></td>
                                             @if($category->parent_id==0)
                                                 <td></td>
                                                 @else
-                                                <td>{{$category->getName($category->parent_id)}}</td>
+                                                <td><a href="{{url('admin/category/detail', ['id'=>$category->getParent($category->parent_id)->id])}}">{{$category->getParent($category->parent_id)->name}}</a></td>
                                             @endif
-                                            <td>{{$category->updated_at}}</td>
+                                            {{-- <td>{{$category->updated_at}}</td> --}}
                                             <td>
                                             
                                             <select name="status" class="form-control form-float show-tick" id="category-status" data-id="{{$category->id}}">
-                                                
-                                                <option value="0"  @php if($category->status == 0) echo"selected" @endphp> 
-                                                     <a href="#" id="{{$category->id}}"  product-id="{{$category->id}}" data-token="{{ csrf_token() }}">
-                                                        Un Publish
-                                                     </a>
-                                                     
-                                                </option>
                                                 
                                                 <option value="1" @php if($category->status == 1) echo"selected" @endphp> 
                                                     <a href="#" id="{{$category->id}}"  product-id="{{$category->id}}" data-token="{{ csrf_token() }}">

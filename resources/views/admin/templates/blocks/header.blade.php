@@ -281,7 +281,7 @@
                         <span>Trang chủ</span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">folder</i>
                         <span>Danh mục</span>
@@ -294,11 +294,11 @@
                             <a href="{{asset('admin/category/add')}}">Thêm danh mục</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">swap_calls</i>
+                        <i class="material-icons">local_offer</i>
                         <span>Sản phẩm</span>
                     </a>
                     <ul class="ml-menu">
@@ -306,7 +306,8 @@
                             <a href="{{asset('admin/product/list')}}">Danh sách sản phẩm</a>
                         </li>
                         <li>
-                            <a href="{{asset('admin/product/add')}}">Thêm sản phẩm</a>
+                            <a href="{{asset('admin/category/list')}}">Danh sách danh mục</a>
+                            {{-- <a href="{{asset('admin/product/add')}}">Thêm sản phẩm</a> --}}
                         </li>
                     </ul>
                 </li>

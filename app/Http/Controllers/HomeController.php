@@ -43,6 +43,7 @@ class HomeController extends Controller
         $categories = Category::where('status', 1)->where('parent_id', 0)->get();
         
         $id       = $this->get_id($category_id);
+
         $products =  Product::where('category_id', $id)->paginate(15);
         $category = Category::findOrFail($id);
         $url      = str_slug($id . ' ' . $category->name);

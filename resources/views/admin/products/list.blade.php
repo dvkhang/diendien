@@ -14,18 +14,10 @@
                     <h2>
                         Danh sách sản phẩm
                     </h2>
-                    <ul class="header-dropdown m-r--5">
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="material-icons">more_vert</i>
-                            </a>
-                            <ul class="dropdown-menu pull-right">
-                                <li><a href="{{url('admin/product/add')}}">Add product</a></li>
-                                <li><a href="javascript:void(0);">Another action</a></li>
-                                <li><a href="javascript:void(0);">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <div class="header-dropdown">
+                        <a class="btn btn-primary waves-effect" href="{{url('admin/product/add')}}">Thêm sản phẩm</a>
+                    </div>
+     
                 </div>
 
                 <div class="body"  style="width: 100%; overflow-y: hidden;">

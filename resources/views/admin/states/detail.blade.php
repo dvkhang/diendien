@@ -7,6 +7,7 @@
                 URL::asset('admin/js/admin.js'),
                 URL::asset('admin/js/script.js'),
                 URL::asset('admin/js/pages/forms/form-validation.js'),
+                URL::asset('admin/js/pages/districts/district.js'),
             ]
             ])
 @section('content')
@@ -32,9 +33,9 @@
                                 <button class="btn btn-primary waves-effect" type="submit">Thêm Huyện</button>
                             </form>
                             <hr>
-                            Danh Sách Huyện :
+                            <h3>Danh Sách Huyện :</h3>
                             @foreach($districts as $district)
-                                <p>{{$district->name}}</p>
+                                <p><i class="material-icons delete-district" url="{{url('admin/district/delete', ['id'=>$district->id])}}" style="cursor:pointer; color: #F44336;">delete_forever</i> <a href="{{url('admin/district/edit', ['id'=>$district->id])}}">{{$district->name}}</a></p>
                             @endforeach
                         </div>
                     </div>

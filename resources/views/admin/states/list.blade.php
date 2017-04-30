@@ -18,16 +18,10 @@
                             <h2>
                                 Danh sách tỉnh thành
                             </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="{{url('admin/state/add')}}">Thêm Tỉnh Thành</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <div class="header-dropdown">
+                                <a class="btn btn-primary waves-effect" href="{{url('admin/state/add')}}">Thêm tỉnh thành</a>
+                            </div>
+          
                         </div>
                         <div class="body" style="width: 100%; overflow-y: hidden;">
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">

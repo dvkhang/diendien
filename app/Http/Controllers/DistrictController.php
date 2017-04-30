@@ -31,4 +31,28 @@ class DistrictController extends Controller
     	$districts =  State::all();
     	return view('admin.districts.list', compact('districts'));
     }
+
+
+    public function getEdit($id)
+    {
+        $district = District::find($id);
+        return view('admin.districts.edit', compact('district'));
+    }
+
+    public function postEdit($id, Request $request)
+    {
+        $district = District::find($id);
+
+        $district->name = $request->name;
+        $district->value   = str_slug($request->name, '');
+        $district->save();
+        return redirect('admin/state/detail/'.$district->state_id);
+    }
+
+    public function getDelete($id)
+    {
+        $district = District::find($id);
+        $district->delete();
+        return 'ok';
+    }
 }

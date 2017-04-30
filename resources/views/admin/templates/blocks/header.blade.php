@@ -295,7 +295,14 @@
                         </li>
                     </ul>
                 </li> --}}
-
+                
+                <li>
+                    <a href="{{asset('admin/order/list')}}">
+                        <i class="material-icons">add_shopping_cart</i>
+                        <span>Đơn hàng</span>
+                    </a>
+                </li>
+                
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">local_offer</i>
@@ -312,12 +319,7 @@
                     </ul>
                 </li>
 
-                <li>
-                    <a href="{{asset('admin/order/list')}}">
-                        <i class="material-icons">add_shopping_cart</i>
-                        <span>Đơn hàng</span>
-                    </a>
-                </li>
+                
 
                 <li>
                     <a href="{{asset('admin/customer/list')}}">
@@ -332,13 +334,13 @@
                 </li>
 
                 <li>
-                    <a href="{{asset('admin/order/list')}}">
-                        <i class="material-icons">add_shopping_cart</i>
-                        <span>Danh sách khách hàng</span>
+                    <a href="{{asset('admin/state/list')}}">
+                        <i class="material-icons">swap_calls</i>
+                        <span>Danh sách tỉnh thành</span>
                     </a>
                 </li>
 
-                <li>
+{{--                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">swap_calls</i>
                         <span>Tỉnh thành</span>
@@ -351,7 +353,7 @@
                             <a href="{{asset('admin/district/list')}}">Danh sách Huyện</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
 
             </ul>

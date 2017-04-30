@@ -42,7 +42,7 @@ class CategoryController extends Controller
     public function getEdit($id)
     {
         $category = Category::find($id);
-        $categories =  Category::all();
+        $categories =  Category::where('id', '<>' , $id)->get();
         return view('admin.categories.edit', ['category' => $category, 'categories'=>$categories]);
     }
 

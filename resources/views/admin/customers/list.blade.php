@@ -28,16 +28,6 @@
                                 </tr>
                                 </thead>
 
-                                <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>SĐT</th>
-                                    <th>Email</th>
-                                    <th>Địa chỉ</th>
-                                    <th>Hành động</th>
-                                </tr>
-                                </tfoot>
-
                                 <tbody>
                                 
                                    

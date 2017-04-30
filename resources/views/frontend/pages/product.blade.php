@@ -31,7 +31,7 @@
                                 <!-- product-imge-->
                                 <div class="product-image">
                                     <div class="product-full">
-                                        <img id="product-zoom" src='{{asset($product->getMedia('image')[0]->getUrl())}}' height="420px" width="512px" data-zoom-image="{{asset($product->getMedia('image')[0]->getUrl())}}"/>
+                                        <img id="product-zoom" src='{{asset($product->getMedia('image')[0]->getUrl())}}' height="512px" width="420px" data-zoom-image="{{asset($product->getMedia('image')[0]->getUrl())}}"/>
                                     </div>
                                     <div class="product-img-thumb" id="gallery_01">
                                         <ul class="owl-carousel" data-items="3" data-nav="true" data-dots="false" data-margin="21" data-loop="false">

@@ -35,34 +35,34 @@
                         
                         <ul class="row product-list grid">
                             @foreach($result as $product)
-                            <li class="col-sx-12 col-sm-3">
+                            <li class="col-sx-12 col-sm-3" style="height: 410px;">
                                 <div class="product-container">
                                     <div class="left-block">
                                         <a href="{{url('product', ['id'=>$product->id])}}">
                                             <img class="img-responsive" alt="product" src="{{asset($product->getMedia()[0]->getUrl())}}" />
                                         </a>
-                                        <div class="quick-view">
+                                        {{-- <div class="quick-view">
                                             <a title="Add to my wishlist" class="heart" href="#"></a>
                                             <a title="Add to compare" class="compare" href="#"></a>
                                             <a title="Quick view" class="search" href="#"></a>
-                                        </div>
+                                        </div> --}}
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="{{url('add-to-cart', ['id'=>$product->id])}}">Thêm vào giỏ hàng</a>
                                         </div>
                                     </div>
                                     <div class="right-block">
                                         <h5 class="product-name"><a href="{{url('product', ['id'=>$product->id])}}">{{$product->name}}</a></h5>
-                                        <div class="product-star">
+                                        {{-- <div class="product-star">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
-                                        </div>
+                                        </div> --}}
                                         <div class="content_price">
                                             <span class="price product-price">{{number_format($product->price,0,",",".")}} VNĐ</span>
                                             @if($product->compare_price > $product->price)
-                                            <p class="price old-price">{{number_format($product->compare_price,0,",",".")}} VNĐ</p>
+                                            <span class="price old-price">{{number_format($product->compare_price,0,",",".")}} VNĐ</span>
                                             @endif
                                         </div>
                               

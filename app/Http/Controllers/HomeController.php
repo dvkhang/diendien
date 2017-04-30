@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Controllers\User;
 use App\Http\Helpers\BladeHelper;
-use App\Order;
 use App\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -14,6 +13,10 @@ use Redirect;
 use App\State;
 use App\District;
 use App\Contact;
+use App\KeySearch;
+use App\Order;
+use App\Customer;
+use Visitor;
 
 class HomeController extends Controller
 {
@@ -27,10 +30,14 @@ class HomeController extends Controller
     {
         $count_category = Category::count();
         $count_product  = Product::count();
-        $count_user     = \App\User::count();
-        $count_order     = \App\Order::count();
+        $count_customer     = Customer::count();
+        $customer_contacts  = Contact::orderBy('id', 'DESC')->limit(5)->get();
+        $count_order     = Order::count();
+        $new_order =  Order::first();
+        $key_searchs = KeySearch::limit(7)->orderBy('id', 'DESC')->orderBy('count')->get();
+        $search_mosts = KeySearch::limit(10)->orderBy('count', 'ASC')->get();
         $orders  = Order::all();
-        return view('admin.index', compact('count_category', 'count_product', 'count_user', 'count_order', 'orders'));
+        return view('admin.index', compact('count_category', 'count_product', 'count_customer', 'count_order', 'orders', 'key_searchs', 'new_order', 'customer_contacts', 'search_mosts'));
     }
 
     public function index()
@@ -40,6 +47,7 @@ class HomeController extends Controller
     }
 
     public function category($category_id){
+
         $categories = Category::where('status', 1)->where('parent_id', 0)->get();
         
         $id       = $this->get_id($category_id);
@@ -161,6 +169,25 @@ class HomeController extends Controller
 
         $category = $request->category_search;
         $key =  $request->key;
+
+        //add table keysearchs
+        if ($key != "") {
+            $check = KeySearch::where('name', $key)->count();
+            if ($check >= 1) {
+                $id =  KeySearch::where('name', $key)->first()->id;
+                $update_key_search =  KeySearch::find($id);
+                $update_key_search->count =  $update_key_search->count +1 ;
+                $update_key_search->save();
+            }else{
+                $key_search =  new KeySearch();
+                $key_search->name = $key;
+                $key_search->count = 1;
+                $key_search->save();
+            }
+            
+        }
+        //end add
+
         if ($category != "" && $key != "" ) {
         $result=   Product::where(function($query) use ($category, $key){
                 $query->where(function($query) use($category){
@@ -171,6 +198,7 @@ class HomeController extends Controller
                         ->orWhere("description", "LIKE", "%$key%");
                 });
             })->paginate(15);
+
         return  view('frontend.pages.result-search', compact('result'));
         }elseif ($key != "" && $category == "") {
         $result=    Product::where(function($query) use ($key){
@@ -183,6 +211,8 @@ class HomeController extends Controller
         }else{
             return redirect()->back();
         }
+
+
 
         
         

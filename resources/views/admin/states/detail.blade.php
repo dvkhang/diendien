@@ -1,4 +1,4 @@
-@extends('admin.templates.default', ['title'=>'Chi tiết Tỉnh ',
+@extends('admin.templates.default', ['title'=>'Thông tin về tỉnh ',
             'libs_elements'=>['node-waves', 'animate', 'bootstrap-select','colorpicker','validate'],
             'customs_css'=>[
                 URL::asset('admin/css/error.css'),
@@ -33,7 +33,9 @@
                                 <button class="btn btn-primary waves-effect" type="submit">Thêm Huyện</button>
                             </form>
                             <hr>
-                            <h3>Danh Sách Huyện :</h3>
+                            <div class="header">
+                                <h5>Danh sách các huyện</h5>
+                            </div>
                             @foreach($districts as $district)
                                 <p><i class="material-icons delete-district" url="{{url('admin/district/delete', ['id'=>$district->id])}}" style="cursor:pointer; color: #F44336;">delete_forever</i> <a href="{{url('admin/district/edit', ['id'=>$district->id])}}">{{$district->name}}</a></p>
                             @endforeach

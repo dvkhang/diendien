@@ -169,9 +169,9 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>{{$new_order->name}}</td>
+                                <td><a href="{{url('admin/order/detail', ['id'=>$new_order->id])}}">{{$new_order->name}}</a></td>
                                 <td>{{$new_order->updated_at}}</td>
-                                <td>{{$new_order->total}}</td>
+                                <td>{{number_format($new_order->total,0,",",".")}} VNĐ</td>
                             </tr>
                             </tbody>
                         </table>

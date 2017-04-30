@@ -232,11 +232,14 @@
                         <!-- PRODUCT LIST -->
                         <ul class="row product-list grid">
                             @foreach($products as $product)
+                            
                             <li class="col-sx-12 col-sm-4">
                                 <div class="product-container">
                                     <div class="left-block">
                                         <a href="{{url('product', ['id'=>$product->id])}}">
+                                        @if($product->getMedia()->isEmpty() == false)
                                             <img class="img-responsive" alt="product" src="{{asset($product->getMedia()[0]->getUrl())}}" />
+                                        @endif    
                                         </a>
                                         {{-- <div class="quick-view">
                                             <a title="Add to my wishlist" class="heart" href="#"></a>

@@ -31,7 +31,8 @@ class ProductRequest extends FormRequest
             'category'=>'required',
             'price'=>'required| min:3',
             'status'=>'required',
-            'file'=>'max:100000000'
+            'image'=>'required'
+            // 'file'=>'max:100000000'
 
         ];
     }
@@ -47,7 +48,8 @@ class ProductRequest extends FormRequest
             'status.required'=>'Chọn trạng thái sản phẩm !',
             'category.required'=>'Chọn danh mục sản phẩm',
             'price.required'=>'Vui lòng nhập giá của sản phẩm',
-            'file.max'=>'File max 100MB'
+            'image.required'=>"Vui lòng chọn hình ảnh cho sản phẩm !"
+            // 'file.max'=>'File max 100MB'
         ];
     }
 }

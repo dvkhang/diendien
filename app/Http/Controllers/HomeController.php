@@ -80,6 +80,9 @@ class HomeController extends Controller
     }
     public function cart()
     {
+        if (Cart::content()->isEmpty() == true) {
+            return redirect('/');
+        }
         $categories = Category::where('status', 1)->get();
         $content = Cart::content();
         $total = Cart::total();

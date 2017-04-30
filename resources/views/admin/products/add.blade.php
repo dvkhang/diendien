@@ -124,9 +124,9 @@
                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <textarea name="summary" id="" cols="30" rows="10"></textarea>
+                                        <textarea name="summary" id="" cols="102" rows="7"></textarea>
                                     </div>
-                                    @if ($errors->has('weight'))
+                                    @if ($errors->has('summary'))
                                         <p class="error">{{ $errors->first('summary') }}</p>
                                     @endif
                                 </div>
@@ -179,10 +179,13 @@
                             <div class="col-lg-3 col-md-4 col-sm-5 col-xs-7">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input multiple type="file" name="image[]" id="image-file" class="image form-control" accept="image/*">
+                                        <input multiple type="file" name="image[]" id="image-file" class="image form-control" accept="image/*" required>
                                     </div>
                                 </div>
                             </div>
+                            @if ($errors->has('image'))
+                                <p class="error">{{ $errors->first('image') }}</p>
+                            @endif
                         </div>
 
                         <div class="row clearfix">

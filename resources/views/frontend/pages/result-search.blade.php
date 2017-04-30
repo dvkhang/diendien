@@ -60,9 +60,12 @@
                                             <i class="fa fa-star-half-o"></i>
                                         </div>
                                         <div class="content_price">
-                                            <span class="price product-price">$38,95</span>
-                                            <span class="price old-price">{{$product->price}} VNĐ</span>
+                                            <span class="price product-price">{{number_format($product->price,0,",",".")}} VNĐ</span>
+                                            @if($product->compare_price > $product->price)
+                                            <p class="price old-price">{{number_format($product->compare_price,0,",",".")}} VNĐ</p>
+                                            @endif
                                         </div>
+                              
                                         <div class="info-orther">
                                             <p>Khối lượng: {{$product->weight}} kg</p>
                                             {{-- <p class="availability">Availability: <span>In stock</span></p> --}}

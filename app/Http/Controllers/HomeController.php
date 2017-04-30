@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Auth;
 use Redirect;
 use App\State;
 use App\District;
+use App\Contact;
+
 class HomeController extends Controller
 {
     use BladeHelper;
@@ -193,7 +195,7 @@ class HomeController extends Controller
 
     public function postContactUs(Request $request)
     {
-        
+        $contact = new Contact();
     }
 
 

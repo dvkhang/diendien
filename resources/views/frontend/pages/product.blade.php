@@ -126,7 +126,7 @@
                                 </div> --}}
                                 <div class="form-action">
                                     <div class="button-group">
-                                        <a class="btn-add-cart" href="#">Add to cart</a>
+                                        <a class="btn-add-cart" href="{{url('add-to-cart', ['id'=>$product->id])}}">Thêm vào giỏ hàng</a>
                                     </div>
                                    {{--  <div class="button-group">
                                         <a class="wishlist" href="#"><i class="fa fa-heart-o"></i>

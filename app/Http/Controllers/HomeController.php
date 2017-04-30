@@ -193,7 +193,7 @@ class HomeController extends Controller
 
     public function postContactUs(Request $request)
     {
-        dd($request);
+        
     }
 
 

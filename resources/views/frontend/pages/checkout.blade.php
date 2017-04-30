@@ -26,14 +26,14 @@
                     <li class="row">
                         <div class="col-sm-6">
                             <label for="first_name" class="required">Họ tên đầy đủ</label>
-                            <input type="text" class="input form-control" name="name" id="first_name" required>
+                            <input type="text" class="input form-control" value="{{old('name')}}" name="name" id="first_name" required>
                             @if ($errors->has('name'))
                                 <p class="error">{{ $errors->first('name') }}</p>
                             @endif
                         </div><!--/ [col] -->
                         <div class="col-sm-6">
                             <label for="telephone" class="required">Số Điện Thoại</label>
-                            <input class="input form-control" type="text" name="phone" id="telephone" required>
+                            <input class="input form-control" type="text" name="phone" value="{{old('phone')}}" id="telephone" required>
                             @if ($errors->has('phone'))
                                 <p class="error">{{ $errors->first('phone') }}</p>
                             @endif
@@ -46,7 +46,7 @@
                         </div>
                         <div class="col-sm-6">
                             <label for="email_address" class="required">Email</label>
-                            <input type="text" class="input form-control" name="email" id="email_address" required>
+                            <input type="text" class="input form-control" value="{{old('email')}}" name="email" id="email_address" required>
                             @if ($errors->has('email'))
                                 <p class="error">{{ $errors->first('email') }}</p>
                             @endif
@@ -56,7 +56,7 @@
                         <div class="col-xs-12">
 
                             <label for="address" class="required">Địa chỉ</label>
-                            <input type="text" class="input form-control" name="address" id="address" required>
+                            <input type="text" class="input form-control" name="address" value="{{old('address')}}" id="address" required>
                             @if ($errors->has('address'))
                                 <p class="error">{{ $errors->first('address') }}</p>
                             @endif

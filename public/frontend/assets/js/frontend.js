@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
 		   var district = jQuery.parseJSON(JSON.stringify(data));
 
 		    // console.log("LOL "+district); 
-		    $('#city').append($("<option></option>").attr("value","").text("LOL")); 
+		    $('#city').append($("<option></option>").attr("value","").text("--- Chọn Quận (Huyện) ---")); 
 			$.each(district, function(index, val) {  
 			// console.log("LOL "+val.value); 
      			$('#city').append($("<option></option>").attr("value",val.value).text(val.name)); 

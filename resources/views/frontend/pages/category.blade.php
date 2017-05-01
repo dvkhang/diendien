@@ -46,8 +46,6 @@
                         </div>
                     </div>
 
-                    
-
                     <!-- ./block category  -->
                     <!-- block filter -->
                     <div class="block left-module">

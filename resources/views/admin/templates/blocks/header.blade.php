@@ -144,8 +144,15 @@
                 </li>
 
                 <li>
+                    <a href="{{asset('admin/contact/list')}}">
+                        <i class="material-icons">mail</i>
+                        <span>Liên hệ</span>
+                    </a>
+                </li>
+
+                <li>
                     <a href="{{asset('admin/state/list')}}">
-                        <i class="material-icons">swap_calls</i>
+                        <i class="material-icons">location_city</i>
                         <span>Danh sách tỉnh thành</span>
                     </a>
                 </li>

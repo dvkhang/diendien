@@ -77,6 +77,20 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
         Route::get('/profile',['uses'=> 'CustomerController@getProfile']);
     });
 
+    Route::group(['prefix' => 'contact'], function () {
+
+
+        // Route::get('/add', 'DistrictController@getAdd');
+        // Route::post('/add', 'DistrictController@postAdd');
+
+        Route::get('/list', 'ContactController@getList');
+
+        Route::get('/edit/{id}', 'ContactController@getEdit');
+        Route::post('/edit/{id}', 'ContactController@postEdit');
+
+        Route::get('/delete/{id}', 'ContactController@getDelete');
+    });
+
     Route::group(['prefix' => 'state'], function () {
         Route::get('/add', 'StateController@getAdd');
         Route::post('/add', 'StateController@postAdd');

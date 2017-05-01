@@ -36,7 +36,7 @@
     </div>
     <!--/.top-header -->
     <!-- MAIN HEADER -->
-    <?php $cate_menu = DB::table('categories')->where('status', 1)->get();?>
+    <?php $cate_menu = App\Category::where('status', 1)->get();?>
     <div class="container main-header">
         <div class="row">
             <div class="col-xs-12 col-sm-3 logo">
@@ -117,47 +117,21 @@
                             <ul class="vertical-menu-list">
                                 @foreach($cate_menu as $category)
                                     <li>
-                                        <a class="parent" href="{{url('category', ['id'=>$category->id])}}"><img class="icon-menu" alt="Funky roots" src="{{asset('frontend')}}/assets/data/2.png">{{$category->name}}</a>
+                                        <a class="{{!$category->children->isEmpty() ? 'parent' :''}}" href="{{url('category', ['id'=>$category->id])}}">{{$category->name}}</a>
+                                        @if(!$category->children->isEmpty())
                                         <div class="vertical-dropdown-menu">
                                             <div class="vertical-groups col-sm-12">
                                                 <div class="mega-group col-sm-4">
-                                                    <h4 class="mega-group-header"><span>Tennis</span></h4>
+                                                    <h4 class="mega-group-header"><span>{{$category->name}}</span></h4>
                                                     <ul class="group-link-default">
-                                                        <li><a href="#">Tennis</a></li>
-                                                        <li><a href="#">Coats &amp; Jackets</a></li>
-                                                        <li><a href="#">Blouses &amp; Shirts</a></li>
-                                                        <li><a href="#">Tops &amp; Tees</a></li>
-                                                        <li><a href="#">Hoodies &amp; Sweatshirts</a></li>
-                                                        <li><a href="#">Intimates</a></li>
+                                                    @foreach($category->children as $category2)
+                                                        <li><a href="{{url('category', ['id'=>$category2->id])}}">{{$category2->name}}</a></li>
+                                                    @endforeach    
                                                     </ul>
-                                                </div>
-                                                <div class="mega-group col-sm-4">
-                                                    <h4 class="mega-group-header"><span>Swimming</span></h4>
-                                                    <ul class="group-link-default">
-                                                        <li><a href="#">Dresses</a></li>
-                                                        <li><a href="#">Coats &amp; Jackets</a></li>
-                                                        <li><a href="#">Blouses &amp; Shirts</a></li>
-                                                        <li><a href="#">Tops &amp; Tees</a></li>
-                                                        <li><a href="#">Hoodies &amp; Sweatshirts</a></li>
-                                                        <li><a href="#">Intimates</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="mega-group col-sm-4">
-                                                    <h4 class="mega-group-header"><span>Shoes</span></h4>
-                                                    <ul class="group-link-default">
-                                                        <li><a href="#">Dresses</a></li>
-                                                        <li><a href="#">Coats &amp; Jackets</a></li>
-                                                        <li><a href="#">Blouses &amp; Shirts</a></li>
-                                                        <li><a href="#">Tops &amp; Tees</a></li>
-                                                        <li><a href="#">Hoodies &amp; Sweatshirts</a></li>
-                                                        <li><a href="#">Intimates</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="mega-custom-html col-sm-12">
-                                                    <a href="#"><img src="{{asset('frontend')}}/assets/data/banner-megamenu.jpg" alt="Banner"></a>
                                                 </div>
                                             </div>
                                         </div>
+                                        @endif
                                     </li>
                                 @endforeach
                                {{--  <li class="cat-link-orther">

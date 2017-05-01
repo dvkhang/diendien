@@ -40,7 +40,7 @@
     <div class="container main-header">
         <div class="row">
             <div class="col-xs-12 col-sm-3 logo">
-                <a href="{{url('/')}}"><img alt="Shop võ thuật Việt Bắc" src="{{asset('frontend')}}/assets/images/logo.png" /></a>
+                <a href="{{url('/')}}"><img alt="Shop võ thuật Việt Bắc" src="{{asset('frontend')}}/assets/images/introduce-logo.png" /></a>
             </div>
             <div class="col-xs-7 col-sm-7 header-search-box">
                 <form class="form-inline"  method="get" action="{{url('search')}}">

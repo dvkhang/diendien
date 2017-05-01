@@ -6,9 +6,9 @@
                 <div class="homeslider">
                     <div class="content-slide">
                         <ul id="contenhomeslider">
-                          <li><img alt="Funky roots" src="{{asset('frontend')}}/assets/data/slide.jpg" title="Funky roots" /></li>
-                          <li><img alt="Funky roots" src="{{asset('frontend')}}/assets/data/slide.jpg" title="Funky roots" /></li>
-                          <li><img  alt="Funky roots" src="{{asset('frontend')}}/assets/data/slide.jpg" title="Funky roots" /></li>
+                          <li><img alt="Funky roots" src="{{asset('frontend')}}/assets/data/slide-option2.jpg" title="Funky roots" /></li>
+                          <li><img alt="Funky roots" src="{{asset('frontend')}}/assets/data/slide-option2.jpg" title="Funky roots" /></li>
+                          <li><img  alt="Funky roots" src="{{asset('frontend')}}/assets/data/slide-option2.jpg" title="Funky roots" /></li>
                         </ul>
                     </div>
                 </div>

@@ -12,9 +12,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="header-banner banner-opacity">
-                    <a href="#"><img alt="Funky roots" src="{{asset('frontend')}}/assets/data/ads1.jpg" /></a>
-                </div>
+                
             </div>
         </div>
     </div>

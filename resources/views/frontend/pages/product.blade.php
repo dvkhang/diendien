@@ -7,17 +7,13 @@
 <div class="columns-container">
     <div class="container" id="columns">
         <!-- breadcrumb -->
-{{--         <div class="breadcrumb clearfix">
-            <a class="home" href="#" title="Return to Home">Home</a>
+        <div class="breadcrumb clearfix">
+            <a class="home" href="{{url('/')}}" title="Return to Home">Trang chủ</a>
             <span class="navigation-pipe">&nbsp;</span>
-            <a href="#" title="Return to Home">Fashion</a>
+            <a href="{{url('category', ['id'=>$product->category->id])}}" title="quay lai danh muc">{{$product->category->name}}</a>
             <span class="navigation-pipe">&nbsp;</span>
-            <a href="#" title="Return to Home">Women</a>
-            <span class="navigation-pipe">&nbsp;</span>
-            <a href="#" title="Return to Home">Dresses</a>
-            <span class="navigation-pipe">&nbsp;</span>
-            <span class="navigation_page">Maecenas consequat mauris</span>
-        </div> --}}
+            <a href="#" title="">{{$product->name}}</a>
+        </div>
         <!-- ./breadcrumb -->
         <!-- row -->
         <div class="row">

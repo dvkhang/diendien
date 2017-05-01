@@ -12,7 +12,7 @@
             <div class="breadcrumb clearfix">
                 <a class="home" href="#" title="Return to Home">Home</a>
                 <span class="navigation-pipe">&nbsp;</span>
-                <span class="navigation_page">Fashion</span>
+                <span class="navigation_page">{{$category->name}}</span>
             </div>
             <!-- ./breadcrumb -->
             <!-- row -->

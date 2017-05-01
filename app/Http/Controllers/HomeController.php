@@ -47,12 +47,14 @@ class HomeController extends Controller
     }
 
     public function category($category_id){
-
-        $categories = Category::where('status', 1)->where('parent_id', 0)->get();
-        
         $id       = $this->get_id($category_id);
-
-        $products =  Product::where('category_id', $id)->paginate(15);
+        if (Category::find($id)->parent_id != 0) {
+            $parent_id = Category::find($id)->parent_id;
+            $products = Product::whereRaw($id." IN (select id from categories where id = 2 or $parent_id = 2 )")->paginate(15);
+        }else{
+            $products =  Product::where('category_id', $id)->paginate(15);
+        }
+        $categories = Category::where('status', 1)->where('parent_id', 0)->get();
         $category = Category::findOrFail($id);
         $url      = str_slug($id . ' ' . $category->name);
         if ($category_id != $url) {

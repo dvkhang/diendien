@@ -11395,7 +11395,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Hiển thị _START_ to _END_ of _TOTAL_ danh sách",
+			"sInfo": "Hiển thị _START_ đến _END_ của _TOTAL_ danh sách",
 	
 	
 			/**
@@ -11438,7 +11438,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(Được lọc từ _MAX_ tổng danh sách)",
 	
 	
 			/**

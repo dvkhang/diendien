@@ -23,6 +23,7 @@
                     <tr>
                         <th>Chủ đề</th>
                         <th>Email</th>
+                        <th>Tên khách</th>
                         <th>Lời nhắn</th>
                     </tr>
                     </thead>
@@ -30,7 +31,8 @@
                     @foreach($contacts as $contact)
                         <tr>   
                             <td>{{$contact->subject}}</td>
-                            <td><a data-toggle="modal" class="show-modal" data-target="#largeModal">{{$contact->email}}</a></td>  
+                            <td><a data-toggle="modal" class="show-modal" data-target="#defaultModal1">{{$contact->email}}</a></td>  
+                            <td>{{$contact->name}}</a></td> 
                             {{-- <td>{{$contact->email}}</td> --}}
                             <td>{{$contact->message}}</td>
                         </tr>
@@ -38,6 +40,28 @@
                     
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="defaultModalLabel">Trả lời khách hàng</h4>
+            </div>
+            <div class="modal-body">
+                
+                    <input type="email" value="" class="form-control" disabled>
+                    <input type="text" value="" class="form-control">
+                
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect">Gửi</button>
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
             </div>
         </div>
     </div>

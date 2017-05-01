@@ -165,6 +165,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Weboap\Visitor\VisitorServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -233,6 +234,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
 
     ],
 

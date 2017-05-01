@@ -104,114 +104,8 @@
                     <!-- ./block filter  -->
 
                     <!-- left silide -->
-                    <div class="col-left-slide left-module">
-                        <ul class="owl-carousel owl-style2" data-loop="true" data-nav = "false" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1" data-autoplay="true">
-                            <li><a href="#"><img src="assets/data/slide-left.jpg" alt="slide-left"></a></li>
-                            <li><a href="#"><img src="assets/data/slide-left2.jpg" alt="slide-left"></a></li>
-                            <li><a href="#"><img src="assets/data/slide-left3.png" alt="slide-left"></a></li>
-                        </ul>
-
-                    </div>
-                    <!--./left silde-->
-                    <!-- SPECIAL -->
-                    <div class="block left-module">
-                        <p class="title_block">SPECIAL PRODUCTS</p>
-                        <div class="block_content">
-                            <ul class="products-block">
-                                <li>
-                                    <div class="products-block-left">
-                                        <a href="#">
-                                            <img src="assets/data/product-100x122.jpg" alt="SPECIAL PRODUCTS">
-                                        </a>
-                                    </div>
-                                    <div class="products-block-right">
-                                        <p class="product-name">
-                                            <a href="#">Woman Within Plus Size Flared</a>
-                                        </p>
-                                        <p class="product-price">$38,95</p>
-                                        <p class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="products-block">
-                                <div class="products-block-bottom">
-                                    <a class="link-all" href="#">All Products</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./SPECIAL -->
-                    <!-- TAGS -->
-                    <div class="block left-module">
-                        <p class="title_block">TAGS</p>
-                        <div class="block_content">
-                            <div class="tags">
-                                <a href="#"><span class="level1">actual</span></a>
-                                <a href="#"><span class="level2">adorable</span></a>
-                                <a href="#"><span class="level3">change</span></a>
-                                <a href="#"><span class="level4">consider</span></a>
-                                <a href="#"><span class="level3">phenomenon</span></a>
-                                <a href="#"><span class="level4">span</span></a>
-                                <a href="#"><span class="level1">spanegs</span></a>
-                                <a href="#"><span class="level5">spanegs</span></a>
-                                <a href="#"><span class="level1">actual</span></a>
-                                <a href="#"><span class="level2">adorable</span></a>
-                                <a href="#"><span class="level3">change</span></a>
-                                <a href="#"><span class="level4">consider</span></a>
-                                <a href="#"><span class="level2">gives</span></a>
-                                <a href="#"><span class="level3">change</span></a>
-                                <a href="#"><span class="level2">gives</span></a>
-                                <a href="#"><span class="level1">good</span></a>
-                                <a href="#"><span class="level3">phenomenon</span></a>
-                                <a href="#"><span class="level4">span</span></a>
-                                <a href="#"><span class="level1">spanegs</span></a>
-                                <a href="#"><span class="level5">spanegs</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./TAGS -->
-                    <!-- Testimonials -->
-                    <div class="block left-module">
-                        <p class="title_block">Testimonials</p>
-                        <div class="block_content">
-                            <ul class="testimonials owl-carousel" data-loop="true" data-nav = "false" data-margin = "30" data-autoplayTimeout="1000" data-autoplay="true" data-autoplayHoverPause = "true" data-items="1">
-                                <li>
-                                    <div class="client-mane">Roverto & Maria</div>
-                                    <div class="client-avarta">
-                                        <img src="assets/data/testimonial.jpg" alt="client-avarta">
-                                    </div>
-                                    <div class="testimonial">
-                                        "Your product needs to improve more. To suit the needs and update your image up"
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="client-mane">Roverto & Maria</div>
-                                    <div class="client-avarta">
-                                        <img src="assets/data/testimonial.jpg" alt="client-avarta">
-                                    </div>
-                                    <div class="testimonial">
-                                        "Your product needs to improve more. To suit the needs and update your image up"
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="client-mane">Roverto & Maria</div>
-                                    <div class="client-avarta">
-                                        <img src="assets/data/testimonial.jpg" alt="client-avarta">
-                                    </div>
-                                    <div class="testimonial">
-                                        "Your product needs to improve more. To suit the needs and update your image up"
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- ./Testimonials -->
+        
+                    
                 </div>
                 <!-- ./left colunm -->
                 <!-- Center colunm-->
@@ -241,24 +135,14 @@
                                             <img class="img-responsive" alt="product" src="{{asset($product->getMedia()[0]->getUrl())}}" />
                                         @endif    
                                         </a>
-                                        {{-- <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div> --}}
+         
                                         <div class="add-to-cart">
                                             <a title="Add to Cart" href="{{url('add-to-cart', ['id'=>$product->id])}}">Thêm vào giỏ hàng</a>
                                         </div>
                                     </div>
                                     <div class="right-block">
                                         <h5 class="product-name"><a href="{{url('product', ['id'=>$product->id])}}">{{$product->name}}</a></h5>
-                                        {{-- <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </div> --}}
+           
                                         <div class="content_price">
                                             <span class="price product-price">{{number_format($product->price,0,",",".")}} VNĐ</span>
                                             @if($product->compare_price > $product->price)
@@ -281,22 +165,6 @@
                     </div>
                     <!-- ./view-product-list-->
                     <div class="sortPagiBar">
-                        {{-- <div class="bottom-pagination">
-                            <nav>
-                                <ul class="pagination">
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li>
-                                        <a href="#" aria-label="Next">
-                                            <span aria-hidden="true">Next &raquo;</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div> --}}
                         <div class="bottom-pagination">
                         <nav>
                           <ul class="pagination">
@@ -325,23 +193,23 @@
                           </ul>
                         </nav>
                     </div>
-                        <div class="show-product-item">
+                  {{--       <div class="show-product-item">
                             <select name="">
                                 <option value="">Show 18</option>
                                 <option value="">Show 20</option>
                                 <option value="">Show 50</option>
                                 <option value="">Show 100</option>
                             </select>
-                        </div>
-                        <div class="sort-product">
+                        </div> --}}
+            {{--             <div class="sort-product">
                             <select>
-                                <option value="">Product Name</option>
-                                <option value="">Price</option>
+                                <option value="">Tên sản phẩm</option>
+                                <option value="">Giá</option>
                             </select>
                             <div class="sort-product-icon">
                                 <i class="fa fa-sort-alpha-asc"></i>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <!-- ./ Center colunm -->

@@ -168,11 +168,13 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td><a href="{{url('admin/order/detail', ['id'=>$new_order->id])}}">{{$new_order->name}}</a></td>
-                                <td>{{$new_order->updated_at}}</td>
-                                <td>{{number_format($new_order->total,0,",",".")}} VNĐ</td>
-                            </tr>
+                            @foreach($new_order as $item)
+                                <tr>
+                                    <td><a href="{{url('admin/order/detail', ['id'=>$item->id])}}">{{$item->name}}</a></td>
+                                    <td>{{$item->updated_at}}</td>
+                                    <td>{{number_format($item->total,0,",",".")}} VNĐ</td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

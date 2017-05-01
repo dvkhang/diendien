@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-        <p>Please wait...</p>
+        <p>Vui lòng chờ...</p>
     </div>
 </div>
 <!-- #END# Page Loader -->
@@ -68,7 +68,7 @@
                         <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
                         <li role="seperator" class="divider"></li> --}}
                         <li><a href="{{ url('/logout') }}" onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();"><i class="material-icons">input</i>Sign Out</a>
+                                                document.getElementById('logout-form').submit();"><i class="material-icons">input</i>Đăng Xuất</a>
                             <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>

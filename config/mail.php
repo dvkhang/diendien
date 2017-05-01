@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => 'khoaimonchien@gmail.com',
-        'name' => 'Example',
+        'name' => 'Shop võ thuật Việt Bắc',
     ],
 
     /*

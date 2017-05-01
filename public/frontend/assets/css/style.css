@@ -4142,7 +4142,7 @@ span.notify-right{
 #contact select,
 #contact textarea{
     border-radius: 0;
-    border-color: #eaeaea;
+    border-color: #bdc3c7;
     box-shadow: inherit;
     outline: 0 none;
 }

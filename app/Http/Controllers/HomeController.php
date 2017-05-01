@@ -17,6 +17,8 @@ use App\KeySearch;
 use App\Order;
 use App\Customer;
 use Visitor;
+use Mail;
+use App\Mail\MailContact;
 
 class HomeController extends Controller
 {
@@ -33,7 +35,7 @@ class HomeController extends Controller
         $count_customer     = Customer::count();
         $customer_contacts  = Contact::orderBy('id', 'DESC')->limit(5)->get();
         $count_order     = Order::count();
-        $new_order =  Order::first();
+        $new_order =  Order::orderBy('id', 'DESC')->limit(3)->get();
         $key_searchs = KeySearch::limit(7)->orderBy('id', 'DESC')->orderBy('count')->get();
         $search_mosts = KeySearch::limit(10)->orderBy('count', 'ASC')->get();
         $orders  = Order::all();
@@ -230,14 +232,15 @@ class HomeController extends Controller
     public function postContactUs(Request $request)
     {
         $contact              = new Contact();
+        $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->subject = $request->subject;
         $contact->message = $request->message;
         $contact->save();
+
+        Mail::to($request->email)->send(new MailContact($contact));
         return redirect()->back()->with('noti', "Cảm ơn bạn đã quan tâm đến cửa hàng của chúng tôi, Chúng tôi sẽ trả lời bạn trong một email sớm nhất có thể !");
-
     }
-
 
     public function getAbouttUs()
     {

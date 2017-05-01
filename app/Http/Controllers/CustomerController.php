@@ -10,6 +10,8 @@ use App\District;
 use App\DetailOrder;
 use App\Http\Requests\CustomerRequest;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Mail;
+use App\Mail\OrderShipped;
 class CustomerController extends Controller
 {
     public function addCustomter(CustomerRequest $request)
@@ -32,15 +34,13 @@ class CustomerController extends Controller
         $order->feeship = $request->feeship;
         $order->total =  $request->total;
         $order->method_payment = $request->methodpayment;
-        // if ($request->methodpayment == 'cod') {
-        //     $order->method_payment = "Dich Vu Thanh Toan Ship Hang COD";
-        // }else{
-        //     $order->method_payment = "Khách hàng chuyển tiền vào tài khoản ngân hàng trước";
-        // }
         $order->is_pay = 0;
         $order->is_ship = 0;
         $order->status = 0;
         $order->save();
+        
+        Mail::to($request->email)->send(new OrderShipped($order));
+
 
         $cart = Cart::content();
         foreach (Cart::content() as $item) {

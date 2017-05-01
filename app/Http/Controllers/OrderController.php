@@ -10,37 +10,6 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    // public function addOrder($Request $request)
-    // {
-    //     $order =  new Order();
-    //     $order->name = "#000".(Order::count()+1);
-    //     $order->customer_id = $customer->id;
-    //     $order->address =  $request->address;
-    //     $order->feeship = $request->feeship;
-    //     $order->total =  $request->total;
-    //     $order->method_payment = $request->methodpayment;
-    //     // if ($request->methodpayment == 'cod') {
-    //     //     $order->method_payment = "Dich Vu Thanh Toan Ship Hang COD";
-    //     // }else{
-    //     //     $order->method_payment = "Khách hàng chuyển tiền vào tài khoản ngân hàng trước";
-    //     // }
-    //     $order->is_pay = 0;
-    //     $order->is_ship = 0;
-    //     $order->status = 0;
-    //     $order->save();
-
-    //     $cart = Cart::content();
-    //     foreach (Cart::content() as $item) {
-    //         $detail_order = new DetailOrder();
-    //         $detail_order->order_id =  $order->id;
-    //         $detail_order->product_id = $item->id;
-    //         $detail_order->quantity = $item->qty;
-    //         $detail_order->save();
-    //     }
-    //     Cart::destroy();
-    //     return redirect()->route('success')->with('cart', $cart)->with('order', $order)->with('customer', $customer);
-    // }
-
     public function getList()
     {
         $preProcess = Order::where('status', 0)->orderBy('id', 'desc')->get();

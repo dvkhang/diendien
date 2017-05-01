@@ -28,9 +28,10 @@
                     </thead>
                     <tbody>
                     @foreach($contacts as $contact)
-                        <tr>                                
+                        <tr>   
                             <td>{{$contact->subject}}</td>
-                            <td>{{$contact->email}}</td>
+                            <td><a data-toggle="modal" class="show-modal" data-target="#largeModal">{{$contact->email}}</a></td>  
+                            {{-- <td>{{$contact->email}}</td> --}}
                             <td>{{$contact->message}}</td>
                         </tr>
                     @endforeach

@@ -36,8 +36,12 @@
                             <input type="text" class="form-control input-sm" name="subject" id="subject" />
                         </div>
                         <div class="form-selector">
+                            <label>Họ tên của bạn</label>
+                            <input type="text" class="form-control input-sm" name="name" id="name" />
+                        </div>
+                        <div class="form-selector">
                             <label>Địa chỉ email của bạn</label>
-                            <input type="text" class="form-control input-sm" name="email" id="email" />
+                            <input type="email" class="form-control input-sm" name="email" id="email" />
                         </div>
                         {{-- <div class="form-selector">
                             <label>Đơn hàng hoặc sản phẩm (nếu có)</label>

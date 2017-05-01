@@ -69,9 +69,9 @@
                     <br/>
                     <ul class="store_info">
                         <li><i class="fa fa-home"></i>Our business address is 1063 Freelon Street San Francisco, CA 95108</li>
-                        <li><i class="fa fa-phone"></i><span>+ 021.343.7575</span></li>
-                        <li><i class="fa fa-phone"></i><span>+ 020.566.6666</span></li>
-                        <li><i class="fa fa-envelope"></i>Email: <span><a href="mailto:%73%75%70%70%6f%72%74@%6b%75%74%65%74%68%65%6d%65.%63%6f%6d">support@kutetheme.com</a></span></li>
+                        <li><i class="fa fa-phone"></i><span>0977701666</span></li>
+                        {{-- <li><i class="fa fa-phone"></i><span>+ 020.566.6666</span></li> --}}
+                        <li><i class="fa fa-envelope"></i>Email: <span><a href="mailto:%73%75%70%70%6f%72%74@%6b%75%74%65%74%68%65%6d%65.%63%6f%6d">vothuatvietbac@gmail.com</a></span></li>
                     </ul>                
                     </div>
             </div>

@@ -103,7 +103,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
         //
         Route::get('/editstt', 'StateController@getEditStt');
 
-        Route::get('/delete', 'StateController@getDelete');
+        Route::get('/delete/{id}', 'StateController@getDelete');
     });
 
 

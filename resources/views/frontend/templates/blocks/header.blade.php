@@ -2,7 +2,7 @@
     <div class="top-header">
         <div class="container">
             <div class="nav-top-links">
-                <a class="first-item" href="#"><img alt="phone" src="{{asset('frontend')}}/assets/images/phone.png" />00-62-658-658</a>
+                <a class="first-item" href="#"><img alt="phone" src="{{asset('frontend')}}/assets/images/phone.png" />0977701666</a>
                 <a href="{{url('contact-us')}}"><img alt="email" src="{{asset('frontend')}}/assets/images/email.png" />Liên hệ với chúng tôi ngay hôm nay !</a>
             </div>
 {{--             <div class="currency ">

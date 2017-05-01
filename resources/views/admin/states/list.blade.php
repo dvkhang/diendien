@@ -3,13 +3,10 @@
             'customs_css'=>[],
             'custom_scripts'=>[
                 URL::asset('admin/js/admin.js'),
-                URL::asset('admin/js/pages/category/edit_status.js'),
-                URL::asset('admin/js/pages/category/delete.js')
+                URL::asset('admin/js/pages/states/state.js'),
             ]
             ])
 @section('content')
-
-            
             <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -23,6 +20,11 @@
                             </div>
           
                         </div>
+                        @if (session('state'))
+                            <div class="alert alert-success">
+                                {{ session('state') }}
+                            </div>
+                        @endif
                         <div class="body" style="width: 100%; overflow-y: hidden;">
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                 <thead>
@@ -51,9 +53,8 @@
                                                 <a href="edit/{{$state->id}}">
                                                     <button type="button" class="btn btn-primary btn-lg">Sửa</button>
                                                 </a>
-                                                
-                                                <a href="#" id="{{$state->id}}" class="delete-category" category-id="{{$state->id}}" data-token="{{ csrf_token() }}">
-                                                    <button type="button" class="btn btn-danger btn-lg">Xóa</button>
+                                                <a class="btn btn-danger btn-lg" id="delete-state" href="{{url('admin/state/delete',['id'=>$state->id])}}">Xóa</a>
+                                             
                                                 </a>
                                             </td>
                                         </tr>

@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 		event.preventDefault();
 		var parent_a =  $(this).parent();
 		var url  = $(this).attr('url');
-		if (!confirm("Are you sure ? to pay ")) {
+		if (!confirm("Bạn có chắc chắn muốn xóa ")) {
             return false;
         }
 

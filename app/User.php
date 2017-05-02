@@ -39,7 +39,7 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        if (Auth::user()->email == 'admin@admin.com') {
+        if (Auth::user()->email == 'priceshaolin@gmail.com') {
             # code...
             return true; // this looks for an admin column in your users table
         }

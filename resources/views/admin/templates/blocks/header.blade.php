@@ -68,7 +68,7 @@
                         <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
                         <li role="seperator" class="divider"></li> --}}
                         <li><a href="{{ url('/logout') }}" onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();"><i class="material-icons">input</i>Đăng Xuất</a>
+                                                document.getElementById('logout-form').submit();"><i class="material-icons">input</i>Sign Out</a>
                             <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
@@ -157,7 +157,7 @@
 
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">local_offer</i>
+                        <i class="material-icons">burst_mode</i>
                         <span>Bài viết</span>
                     </a>
                     <ul class="ml-menu">

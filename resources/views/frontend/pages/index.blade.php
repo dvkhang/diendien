@@ -22,8 +22,8 @@
                <div class="product-featured clearfix">
                     <div class="banner-featured">
                         <div class="banner-img">
-                            @if(!$category->getMedia()->isEmpty())
-                                <a><img alt="Featurered 1" src="{{asset($category->getMedia()[0]->getUrl())}}" /></a>
+                            @if(isset($category->getMedia('image')[0]))
+                                <a alt="Featurered 1"><img src="{{url('media', ['disk'=> $category->getMedia('image')[count($category->getMedia('image'))-1]->id,'filename'=>$category->getMedia('image')[count($category->getMedia('image'))-1]->file_name])}}"></a>
                             @endif
                         </div>
                     </div>

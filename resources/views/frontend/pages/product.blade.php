@@ -228,10 +228,11 @@
                         </div>
                         <!-- ./tab product -->
                         <!-- box product -->
+                        @if(!$product_relas->isEmpty())
                         <div class="page-product-box">
                             <h3 class="heading">Sản phẩm liên quan</h3>
                             <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav = "true" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":4}}'>
-                            @if(!$product_relas->isEmpty())
+                           
                             @foreach($product_relas as $product_rela)
                                 <li>
                                     <div class="product-container">
@@ -241,7 +242,7 @@
                                                 
                                             <a href="{{url('product', ['id'=>$product_rela->id])}}">
                                                 @if(!$product_rela->getMedia('image')->isEmpty())
-                                                    <img class="img-responsive" alt="product_rela" src="{{asset($product_rela->getMedia()[0]->getUrl())}}" /></a>
+                                                    <img class="img-responsive" alt="product_rela" src="{{asset($product_rela->getMedia()[0]->getUrl())}}" />
                                                 @endif
                                             </a>
                                             <div class="add-to-cart">
@@ -256,14 +257,15 @@
                                                     <span class="price old-price">{{number_format($product_rela->compare_price,0,",",".")}} VNĐ</span>
                                                 @endif
 {{--                                                 <span class="price old-price">$52,00</span>
- --}}                                            </div>
+ --}}                                       </div>
                                         </div>
                                     </div>
                                 </li>
                                 @endforeach
-                                @endif
+                                
                             </ul>
                         </div>
+                        @endif
                         <!-- ./box product -->
                         <!-- box product -->
                         

@@ -78,7 +78,8 @@ class HomeController extends Controller
         if ($item_id != $url) {
             return redirect('/product/' . $url);
         }
-        return view('frontend.pages.product', compact('categories', 'product'));
+        $product_relas = Product::where('id', '<>' ,$id)->limit(10)->get();
+        return view('frontend.pages.product', compact('categories', 'product', 'product_relas'));
     }
     public function addToCart($id)
     {

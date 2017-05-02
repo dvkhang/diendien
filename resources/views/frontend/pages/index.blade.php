@@ -38,8 +38,9 @@
                                             <div class="left-block">
                                                 <a href="{{url('product', ['id'=>$product->id])}}">
                                                 @if(!$product->getMedia()->isEmpty())
-                                                <img class="img-responsive" alt="product" src="{{asset($product->getMedia()[0]->getUrl())}}" /></a>
+                                                <img class="img-responsive" alt="product" src="{{asset($product->getMedia()[0]->getUrl())}}" />
                                                 @endif
+                                                </a>
                                                 {{-- <div class="quick-view">
                                                         <a title="Add to my wishlist" class="heart" href="#"></a>
                                                         <a title="Add to compare" class="compare" href="#"></a>

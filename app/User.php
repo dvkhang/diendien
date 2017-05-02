@@ -6,12 +6,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
 use Illuminate\Support\Facades\Auth;
-use Zizaco\Entrust\Traits\EntrustUserTrait;
+
 
 class User extends Authenticatable 
 {
     use Notifiable;
-    use EntrustUserTrait;
+
 
     protected $table = 'users';
     /**

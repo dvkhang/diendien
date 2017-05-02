@@ -1,6 +1,6 @@
 
 @extends('frontend.templates.master', [
-    'title' => 'Liên hệ với chúng tôi',
+    'title' => 'Giới thiệu về chúng tôi',
     'include'=>[],
 
 ])

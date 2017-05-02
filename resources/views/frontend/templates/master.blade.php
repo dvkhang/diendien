@@ -78,10 +78,10 @@ $arr=explode('/', $request->path());
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-sm-4">
-                            <a href="">Liên hệ với chúng tôi</a>
+                            <a href="{{url('about-us')}}">Liên hệ với chúng tôi</a>
                         </div>
                         <div class="col-sm-4">
-                            <a href="">Giới thiệu về chúng tôi</a>
+                            <a href="{{url('contact-us')}}">Giới thiệu về chúng tôi</a>
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@ $arr=explode('/', $request->path());
             <div id="footer-menu-box">
                 <div class="col-sm-12">
                     <ul class="footer-menu-list">
-                        <li><a href="#" >Company Info - Partnerships</a></li>
+                        <li><a href="#" >Thông tin cửa hàng - Partnerships</a></li>
                     </ul>
                 </div>
                 <p class="text-center">Copyrights &#169; 2017 Shop võ thuật Việt Bắc. All Rights Reserved. Designed by Khoa Trần</p>

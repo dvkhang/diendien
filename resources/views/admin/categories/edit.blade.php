@@ -78,7 +78,7 @@
                                     </div> 
                                     <div class="col-lg-3 col-md-4 col-sm-5 col-xs-7">
                                         <div class="form-group">
-                                            <input type="checkbox" id="md_checkbox_21" name="featured" class="filled-in chk-col-red"  /><label for="md_checkbox_21"></label>
+                                            <input type="checkbox" id="md_checkbox_21" name="featured" class="filled-in chk-col-red" {{$category->status ==1 ? "checked" : ""}}  /><label for="md_checkbox_21"></label>
                                         </div>
                                     </div>
                                 </div>

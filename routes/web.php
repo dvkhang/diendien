@@ -107,6 +107,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     });
 
 
+
+
     Route::group(['prefix' => 'district'], function () {
 
 
@@ -119,6 +121,36 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
         Route::post('/edit/{id}', 'DistrictController@postEdit');
 
         Route::get('/delete/{id}', 'DistrictController@getDelete');
+    });
+
+    Route::group(['prefix' => 'page'], function () {
+        Route::get('/add', 'PageController@getAdd');
+        Route::post('/add', 'PageController@postAdd');
+
+        Route::get('/list', 'PageController@getList');
+        Route::get('/detail/{id}', 'PageController@detail');
+
+        Route::get('/edit/{id}', 'PageController@getEdit');
+        Route::post('/edit/{id}', 'PageController@postEdit');
+        //
+        Route::get('/editstt', 'PageController@getEditStt');
+
+        Route::get('/delete/{id}', 'PageController@getDelete');
+    });
+
+    Route::group(['prefix' => 'post'], function () {
+        Route::get('/add', 'PostController@getAdd');
+        Route::post('/add', 'PostController@postAdd');
+
+        Route::get('/list', 'PostController@getList');
+        Route::get('/detail/{id}', 'PostController@detail');
+
+        Route::get('/edit/{id}', 'PostController@getEdit');
+        Route::post('/edit/{id}', 'PostController@postEdit');
+        //
+        Route::get('/editstt', 'PostController@getEditStt');
+
+        Route::get('/delete/{id}', 'PostController@getDelete');
     });
 
 

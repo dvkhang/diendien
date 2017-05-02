@@ -155,6 +155,22 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">local_offer</i>
+                        <span>Bài viết</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="{{asset('admin/post/list')}}">Bài viết</a>
+                        </li>
+                        <li>
+                            <a href="{{asset('admin/page/list')}}">Trang</a>
+                            {{-- <a href="{{asset('admin/product/add')}}">Thêm sản phẩm</a> --}}
+                        </li>
+                    </ul>
+                </li>
+
 {{--                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">swap_calls</i>

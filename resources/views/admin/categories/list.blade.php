@@ -19,7 +19,7 @@
                                 Danh sách danh mục
                             </h2>
                             <div class="header-dropdown">
-                                <a class="btn btn-primary waves-effect" href="{{url('admin/category/add')}}">Thêm sản phẩm</a>
+                                <a class="btn btn-primary waves-effect" href="{{url('admin/category/add')}}">Thêm danh mục</a>
                             </div>
                         </div>
                         <div class="body" style="width: 100%; overflow-y: hidden;">

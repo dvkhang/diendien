@@ -13,7 +13,7 @@
             <div style="padding-top: 50px;">
                 
                 <p>1. Shop võ thuật Việt Bắc sẽ không gửi tin nhắn xác nhận đơn hàng đến quý khách. Nếu quý khách có nhu cầu xem lại thông tin mua hàng, vui lòng kiểm tra xác nhận đơn hàng đã được gửi qua email.</p>
-                <p>2. Thời gian giao hàng dự kiến sẽ được cập nhật liên tục qua email và tin nhắn điện thoại. Quý khách hoàn toàn kiểm tra được tình trạng đơn hàng <a style="color: #2980b9;" href="{{url('/order-trackig')}}">tại đây</a></p>
+                {{-- <p>2. Thời gian giao hàng dự kiến sẽ được cập nhật liên tục qua email và tin nhắn điện thoại. Quý khách hoàn toàn kiểm tra được tình trạng đơn hàng <a style="color: #2980b9;" href="{{url('/order-trackig')}}">tại đây</a></p> --}}
                 <p>3. Khi có nhu cầu thay đổi thông tin cá nhân, quý khách vui long liên hệ với chung tôi để được thay đổi SĐT :09090909</p>
             </div>
 

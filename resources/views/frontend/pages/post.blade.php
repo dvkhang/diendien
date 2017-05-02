@@ -36,6 +36,7 @@
                     </div>
                 </article>
                 <!-- Related Posts -->
+                @if(!$related_posts->isEmpty())
                 <div class="single-box">
                     <h2>Bài viết liên quan</h2>
                     <ul class="related-posts owl-carousel" data-dots="false" data-loop="true" data-nav = "true" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-responsive='{"0":{"items":1},"600":{"items":2},"1000":{"items":3}}'>
@@ -62,6 +63,7 @@
                    
                     </ul>
                 </div>
+                @endif
                 <!-- ./Related Posts -->
             </div>
             <!-- ./ Center colunm -->

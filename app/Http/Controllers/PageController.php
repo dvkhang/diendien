@@ -45,4 +45,11 @@ class PageController extends Controller
         $category->status = $request->value;
         $category->save();
     }
+
+    public function detail($id)
+    {
+        $page =  Page::find($id);
+        $posts =  $page->post;
+        return view('admin.pages.detail', compact('posts'));
+    }
 }

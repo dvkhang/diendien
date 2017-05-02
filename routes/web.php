@@ -197,6 +197,11 @@ Route::post('contact-us', 'HomeController@postContactUs');
 
 Route::get('about-us', 'HomeController@getAbouttUs');
 
+Route::get('page/{id}', 'HomeController@page');
+Route::get('post/{id}', 'HomeController@post');
+
+
+
 
 // Route::post('/add-order',['uses'=> 'HomeController@addOrder']);
 // Route::get('update-order/{id}',[ 'uses'=> 'HomeController@updateOrder']);

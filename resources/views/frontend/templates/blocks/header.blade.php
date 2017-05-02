@@ -174,92 +174,13 @@
                                     </li>
                                    
                                     <li><a href="{{url('contact-us')}}">Liên Hệ với chúng tôi</a></li>
+                                    <?php $pages = App\Page::where('status', 1)->get();?>
+                                    @if(!$pages->isEmpty())
+                                        @foreach($pages as $page)
+                                            <li><a href="{{url('page',['id'=>$page->id])}}">{{$page->title}}</a></li>
+                                        @endforeach
+                                    @endif
                                     
-                                    <li class="dropdown">
-                                        <a href="category.html" class="dropdown-toggle" data-toggle="dropdown">Digital</a>
-                                        <ul class="dropdown-menu container-fluid">
-                                            <li class="block-container">
-                                                <ul class="block">
-                                                    <li class="link_container"><a href="#">Mobile</a></li>
-                                                    <li class="link_container"><a href="#">Tablets</a></li>
-                                                    <li class="link_container"><a href="#">Laptop</a></li>
-                                                    <li class="link_container"><a href="#">Memory Cards</a></li>
-                                                    <li class="link_container"><a href="#">Accessories</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul> 
-                                    </li>
-                                    <li><a href="category.html">Furniture</a></li>
-                                    <li><a href="category.html">Jewelry</a></li>
-                                    <li class="dropdown">
-                                        <a href="category.html" class="dropdown-toggle" data-toggle="dropdown">Pages</a>
-                                            <ul class="mega_dropdown dropdown-menu" style="width: 830px;">
-                                            <li class="block-container col-sm-4">
-                                                <ul class="block">
-                                                    <li class="link_container group_header">
-                                                        <a href="#">Page</a>
-                                                    </li>
-                                                    <li class="link_container">
-                                                        <a href="category.html">Category Left Sidebar</a>
-                                                    </li>
-                                                    <li class="link_container">
-                                                        <a href="category2.html">Category Right Sidebar</a>
-                                                    </li>
-                                                    <li class="link_container">
-                                                        <a href="detail.html">Product Left Sidebar</a>
-                                                    </li>
-                                                    
-                                                    <li class="link_container">
-                                                        <a href="detail2.html">Product Full width</a>
-                                                    </li>
-                                                    <li class="link_container">
-                                                        <a href="detail3.html">Product Right Sidebar</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="block-container col-sm-4">
-                                                <ul class="block">
-                                                    <li class="link_container group_header">
-                                                        <a href="#">Page</a>
-                                                    </li>
-                                                    <li class="link_container">
-                                                        <a href="wishlist.html">Wishlist</a>
-                                                    </li>
-                                                    <li class="link_container">
-                                                        <a href="compare.html">Compare</a>
-                                                    </li>
-                                                    <li class="link_container">
-                                                        <a href="order.html">Order</a>
-                                                    </li>
-                                                    <li class="link_container">
-                                                        <a href="checkout.html">Checkout</a>
-                                                    </li>
-                                                    <li class="link_container">
-                                                        <a href="login.html">Login</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="block-container col-sm-4">
-                                                <ul class="block">
-                                                    <li class="link_container group_header">
-                                                        <a href="#">Page</a>
-                                                    </li>
-                                                    <li class="link_container">
-                                                        <a href="blog.html">Blog</a>
-                                                    </li>
-                                                    <li class="link_container">
-                                                        <a href="blog-detail.html">Blog Post</a>
-                                                    </li>
-                                                    <li class="link_container">
-                                                        <a href="about.html">About Us</a>
-                                                    </li>
-                                                    <li class="link_container">
-                                                        <a href="contact.html">Contact Us</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
                                 </ul>
                             </div><!--/.nav-collapse -->
                         </div>

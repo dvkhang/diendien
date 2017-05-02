@@ -19,6 +19,9 @@ use App\Customer;
 use Visitor;
 use Mail;
 use App\Mail\MailContact;
+use App\Page;
+use App\Post;
+
 
 class HomeController extends Controller
 {
@@ -245,6 +248,34 @@ class HomeController extends Controller
     public function getAbouttUs()
     {
         return view('frontend.pages.about-us');
+    }
+
+
+    public function page($item_id)
+    {
+        
+
+        $id       = $this->get_id($item_id);
+        $page =  Page::find($id);
+        $url      = str_slug($id . ' ' . $page->title);
+        if ($item_id != $url) {
+            return redirect('/page/' . $url);
+        }
+
+        return view('frontend.pages.page', compact('page'));
+    }
+
+    public function post($item_id)
+    {
+        $id       = $this->get_id($item_id);
+        $post =  Post::find($id);
+        $url      = str_slug($id . ' ' . $post->title);
+        if ($item_id != $url) {
+            return redirect('/post/' . $url);
+        }
+        $related_posts = Post::where('id','<>',$id)->orderBy('id', 'DESC')->limit(10)->get();
+
+        return view('frontend.pages.post', compact('post', 'related_posts'));
     }
 
     // public function checkOrder(Request $request)

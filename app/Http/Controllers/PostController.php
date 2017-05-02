@@ -21,7 +21,7 @@ class PostController extends Controller
         $post =  new Post();
         $post->title = $request->title;
         $post->summary = $request->summary;
-        $post->description = htmlentities($request->description, ENT_QUOTES);
+        $post->description = html_entity_decode($request->description);
         $post->page_id =$request->page;
         $post->status =$request->status;
         $post->save();

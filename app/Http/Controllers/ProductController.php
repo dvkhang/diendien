@@ -62,11 +62,26 @@ class ProductController extends Controller
         return view('admin.products.edit', compact('categories','product'));
     }
 
-    public function postEdit(ProductRequest $request, $id)
+    public function postEdit($id, Request $request)
     {
-        $product              = Product::findOrFail($id);
+        $this->validate($request, [
+        'name' => 'required|min:3',
+        'price' => 'required',
+        'description'=>'required',
+        'category'=>'required',
+        'status'=>'required',
+
+    ], [
+        'name.required'=>'Vui lòng nhập tên sản phẩm', 
+        'price.required'=>'Vui lòng nhập giá sản phẩm', 
+        'description.required'=>'Vui lòng nhập mô tả sản phẩm', 
+        'category.required'=>'Vui lòng chọn danh mục cho sản phẩm', 
+        'status.required'=>'Vui lòng chọn trạng thái cho sản phẩm', 
+
+    ]);
+        $product              = Product::find($id);
         $product->name        = $request->name;
-        $product->price       = empty($request->price) ? 0 : $request->price;
+        $product->price       = $request->price;
         $product->compare_price = $request->compare_price;
         $product->description = htmlentities($request->description, ENT_QUOTES);
         $product->category_id = $request->category;

@@ -55,35 +55,48 @@
                             <div class="layered layered-filter-price">
                         
                                 <!-- filter price -->
-                                <div class="layered_subtitle">Giá</div>
-                                <div class="layered-content slider-range">
+                                <div class="layered_subtitle">price</div>
+                            <div class="layered-content slider-range">
 
-                                    <div data-label-reasult="Range:" data-min="0" data-max="50000000" data-unit="$" class="slider-range-price" data-value-min="1000" data-value-max="5000000"></div>
-                                    <div class="amount-range-price">Range: 20000 - 5000000</div>
-                                    <ul class="check-box-list">
-                                        <li>
-                                            <input type="checkbox" id="p1" name="cc" />
-                                            <label for="p1">
-                                                <span class="button"></span>
-                                                $20 - $50<span class="count">(0)</span>
-                                            </label>
+                                    <div data-label-reasult="Range:" data-min="0" data-max="50000000" data-unit="" class="slider-range-price" data-value-min="1000" data-value-max="5000000"></div>
+
+                                    <div class="amount-range-price" >Khoảng: {{$request->has('filter-price')? $price_min." - ". $price_max:''.number_format(1000, 0, ",", ".").' - '.number_format(5000000, 0, ",", ".") }}</div>
+                                    <ul class="list-inline">
+                                        <li style="padding-bottom: 4px;">
+                                            <input type="number" name="min-price" style="border: 1px solid #95a5a6;" class="min-price" value="{{$request->has('filter-price')?$price_min:1000}}"  placeholder="1000">&nbsp;&nbsp;-
                                         </li>
                                         <li>
-                                            <input type="checkbox" id="p2" name="cc" />
-                                            <label for="p2">
-                                                <span class="button"></span>
-                                                $50 - $100<span class="count">(0)</span>
-                                            </label>
+                                            <input type="number" name="max-price" style="border: 1px solid #95a5a6;" class="max-price" value="{{$request->has('filter-price')?$price_max:5000000}}"  placeholder="5000000">
                                         </li>
-                                        <li>
-                                            <input type="checkbox" id="p3" name="cc" />
-                                            <label for="p3">
-                                                <span class="button"></span>
-                                                $100 - $250<span class="count">(0)</span>
-                                            </label>
-                                        </li>
+                                        <li><button type="submit" cat_id="{{$category->id}}" id="filter-price"><span class="icon-filter glyphicon glyphicon-play"></span></button></li>
                                     </ul>
-                                </div>
+
+
+                               <!--  <ul class="check-box-list">
+                                    <li>
+                                        <input type="checkbox" id="p1"  name="cc" />
+                                        <label for="p1">
+                                        <span class="button"></span>
+                                        $20 - $50<span class="count"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="p2" name="cc" />
+                                        <label for="p2">
+                                        <span class="button"></span>
+                                        $50 - $100<span class="count"></span>
+                                        </label>   
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="p3" name="cc" />
+                                        <label for="p3">
+                                        <span class="button"></span>
+                                        $100 - $250<span class="count"></span>
+                                        </label>   
+                                    </li>
+                                </ul>
+ -->
+                            </div>
                                 <!-- ./filter price -->
                                 <!-- filter color -->
                                 

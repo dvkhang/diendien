@@ -1,5 +1,5 @@
 @extends('admin.templates.default', ['title'=>'Sửa sản phẩm',
-            'libs_elements'=>['node-waves', 'animate', 'bootstrap-select', 'sweetalert', 'bootstrap-notify','ckeditor','check-file', 'jquery-slimscroll','colorpicker'],
+            'libs_elements'=>['node-waves', 'animate', 'bootstrap-select', 'sweetalert', 'bootstrap-notify','ckeditor','check-file', 'jquery-slimscroll','colorpicker', 'validate'],
             'customs_css'=>[
                 URL::asset('/admin/css/products/product.css'),
                 URL::asset('admin/css/error.css'),
@@ -10,6 +10,8 @@
                 URL::asset('admin/js/script.js'),
                 URL::asset('admin/js/pages/ui/dialogs.js'),
                 URL::asset('admin/js/pages/forms/editors.js'),
+                URL::asset('admin/js/pages/forms/form-validation.js'),
+
             ]
             ])
 @section('content')
@@ -29,7 +31,7 @@
                 </div>
 
                 <div class="body">
-                    <form id="form_validation" method="POST" action="{{url('admin/product/edit', ['id'=>$product->id])}}" enctype="multipart/form-data">
+                    <form id="form_advanced_validation" method="POST" action="{{url('admin/product/edit', ['id'=>$product->id])}}" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input type="hidden" name="MAX_FILE_SIZE" value="50000000"/>
                         
@@ -61,7 +63,7 @@
                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="name" placeholder="AAAA" value="{{old('name') ? old('name') : $product->name}}" required>
+                                        <input type="text" class="form-control" minlength="3" name="name" placeholder="AAAA" value="{{old('name') ? old('name') : $product->name}}" required>
                                     </div>
                                     @if ($errors->has('name'))
                                         <p class="error">{{ $errors->first('name') }}</p>
@@ -77,7 +79,7 @@
                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="number" class="form-control" name="price" min="0" value="{{old('price') ? old('price') : $product->price}}" placeholder="10$">
+                                        <input type="number" class="form-control" min="100" required name="price" min="0" value="{{old('price') ? old('price') : $product->price}}" placeholder="10$">
                                     </div>
                                     @if ($errors->has('price'))
                                         <p class="error">{{ $errors->first('price') }}</p>
@@ -93,7 +95,7 @@
                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="number" class="form-control" name="compare_price" min="0" value="{{old('compare_price') ? old('compare_price') : $product->compare_price}}" placeholder="10$">
+                                        <input type="number" class="form-control" name="compare_price" min="0" value="{{old('compare_price') ? old('compare_price') : $product->compare_price}}" placeholder="1000 VNĐ">
                                     </div>
                                     @if ($errors->has('compare_price'))
                                         <p class="error">{{ $errors->first('compare_price') }}</p>
@@ -110,11 +112,11 @@
                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <textarea id="ckeditor" name="description">
+                                        <textarea id="ckeditor" name="description" required minlength="100">
                                             {{old('description') ? old('description') : $product->description}}
                                         </textarea>
                                     </div>
-                                    @if ($errors->has('feature'))
+                                    @if ($errors->has('description'))
                                         <p class="error">{{ $errors->first('description') }}</p>
                                     @endif
                                 </div>
@@ -129,7 +131,6 @@
                                 <div class="form-group">
                                     <div>
                                         <select name="status" required  class="form-control show-tick" data-show-subtext="true">
-                                            <option value="0" {{$product->status == 0 ? 'selected': ''}}>Un publish </option>
                                             <option value="1" {{$product->status == 1 ? 'selected': ''}}>Live </option>
                                             <option value="2" {{$product->status == 2 ? 'selected': ''}}>Disable </option>
                                         </select>

@@ -64,7 +64,6 @@
                                     {{--<td>{!! $product->description !!}</td>--}}
                                     <td>
                                         <select name="status" class="form-control form-float show-tick edit-status" id="09">
-                                            <option href="{{url('admin/product/edit-status', ['id'=>$product->id])}}" value="0" {{$product->status == 0? 'selected':''}}>Un publish</option>
                                             <option href="{{url('admin/product/edit-status', ['id'=>$product->id])}}" value="1" {{$product->status == 1? 'selected':''}}>Live</option>
                                             <option href="{{url('admin/product/edit-status', ['id'=>$product->id])}}" value="2" {{$product->status == 2? 'selected':''}}>Disable</option>
                                         </select>

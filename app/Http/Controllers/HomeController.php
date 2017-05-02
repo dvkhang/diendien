@@ -51,22 +51,48 @@ class HomeController extends Controller
         return view('frontend.pages.index', compact('categories'));
     }
 
-    public function category($category_id){
+    public function category(Request $request ,$category_id){
+        $price_min = 0;
+        $price_max = 0;
         $id = $this->get_id($category_id);
-
-        if(!Category::find($id)->children->isEmpty()){
-            $products = Product::whereRaw("category_id IN (SELECT id FROM `categories` where id = $id OR parent_id = $id)")->paginate(15);
+        if($request->exists('filter-price')){
+            $string = explode("-", $request->get('filter-price'));
+            $price_min = $string[0];
+            $price_max = $string[1];
+            if(!Category::find($id)->children->isEmpty()){
+                $products = Product::whereRaw("category_id IN (SELECT id FROM `categories` where id = $id OR parent_id = $id)")->where('price','>=', $price_min)->where('price', '<=', $price_max)->paginate(15);
+            }else{
+                $products =  Product::where('category_id', $id)->where('price','>=', $price_min)->where('price', '<=', $price_max)->paginate(15);
+            }
+            
+            // $categories = Category::where('status', 1)->where('parent_id', 0)->get();
+            // $category = Category::findOrFail($id);
+            // $url      = str_slug($id . ' ' . $category->name);
+            // if ($category_id != $url) {
+            //     return redirect('/category/' . $url);
+            // }
         }else{
-            $products =  Product::where('category_id', $id)->paginate(15);
+            if(!Category::find($id)->children->isEmpty()){
+                $products = Product::whereRaw("category_id IN (SELECT id FROM `categories` where id = $id OR parent_id = $id)")->paginate(15);
+            }else{
+                $products =  Product::where('category_id', $id)->paginate(15);
+            }
+            
+            // $categories = Category::where('status', 1)->where('parent_id', 0)->get();
+            // $category = Category::findOrFail($id);
+            // $url      = str_slug($id . ' ' . $category->name);
+            // if ($category_id != $url) {
+            //     return redirect('/category/' . $url);
+            // }
         }
-        
         $categories = Category::where('status', 1)->where('parent_id', 0)->get();
         $category = Category::findOrFail($id);
         $url      = str_slug($id . ' ' . $category->name);
         if ($category_id != $url) {
             return redirect('/category/' . $url);
         }
-        return view('frontend.pages.category', compact('products', 'categories', 'category'));
+        
+        return view('frontend.pages.category', compact('products', 'categories', 'category', 'price_min', 'price_max'));
     }
 
     public function productDetail($item_id)

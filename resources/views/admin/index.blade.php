@@ -249,6 +249,37 @@
             </div>
         </div>
         @endif
+
+        @if($warning_products_number != null)
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="card">
+                <div class="header">
+                    <h2>Sản phẩm còn ít trong kho</h2>
+                </div>
+                <div class="body">
+                    <div class="table-responsive">
+                        <table class="table table-hover dashboard-task-infos">
+                            <thead>
+                            <tr>
+                                
+                                <th>Tên sản phẩm</th>
+                                <th>Số lượng</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($warning_products_number as $warning_product_number)
+                                <tr>
+                                    <td><a href="{{url('admin/product/edit', ['id'=>$warning_product_number->id])}}">{{$warning_product_number->name}}</a></td>
+                                    <td>{{$warning_product_number->quantity}}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
         <!-- #END# New Order -->
         <!-- Browser Usage -->
        {{--  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">

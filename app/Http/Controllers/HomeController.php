@@ -41,8 +41,10 @@ class HomeController extends Controller
         $new_order =  Order::orderBy('id', 'DESC')->limit(3)->get();
         $key_searchs = KeySearch::limit(7)->orderBy('id', 'DESC')->orderBy('count')->get();
         $search_mosts = KeySearch::limit(10)->orderBy('count', 'ASC')->get();
+        $warning_products_number = Product::where('quantity', '<', 10)->get();
+
         $orders  = Order::all();
-        return view('admin.index', compact('count_category', 'count_product', 'count_customer', 'count_order', 'orders', 'key_searchs', 'new_order', 'customer_contacts', 'search_mosts'));
+        return view('admin.index', compact('count_category', 'count_product', 'count_customer', 'count_order', 'orders', 'key_searchs', 'new_order', 'customer_contacts', 'search_mosts', 'warning_products_number'));
     }
 
     public function index()

@@ -8,7 +8,7 @@
     <div class="container" id="columns">
         <!-- breadcrumb -->
         <div class="breadcrumb clearfix">
-            <a class="home" href="{{url('/')}}" title="Return to Home">Home</a>
+            <a class="home" href="{{url('/')}}" title="Return to Home">Trang chủ</a>
             <span class="navigation-pipe">&nbsp;</span>
             <a class="home" href="{{url('page', ['id'=>$post->page->id])}}" title="Blog">{{$post->page->title}}</a>
             <span class="navigation-pipe">&nbsp;</span>

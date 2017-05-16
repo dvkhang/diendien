@@ -74,7 +74,9 @@
                                     {{-- <p>Condition: New</p> --}}
                                 </div>
                                 <div class="product-desc">
-                                    Vestibulum eu odio. Suspendisse potenti. Morbi mollis tellus ac sapien. Praesent egestas tristique nibh. Nullam dictum felis eu pede mollis pretium.Fusce egestas elit eget lorem. 
+                                    {!! html_entity_decode($product->summary, ENT_QUOTES, 'UTF-8') !!}</br>
+
+                                    Shop Việt Bắc bán hàng online các sản phẩm võ thuật phục vụ cho việc thi đấu và tập luyện võ thuật của các môn võ như Boxing, Kick - Boxing, Muay Thái, MMA, BJJ, Võ Cổ Truyền Việt Nam, Vovinam - Việt Võ Đạo, Karate, Taekwondo, Vịnh Xuân, Hồng Gia, Thái Lý Phật và các môn võ thuật khác.
                                 </div>
                                 {{-- <div class="form-option">
                                     <p class="form-option-title">Available Options:</p>
@@ -135,7 +137,7 @@
                                 <div class="form-share">
                                     <div class="sendtofriend-print">
                                         <a href="javascript:print();"><i class="fa fa-print"></i> In</a>
-                                        <a href="#"><i class="fa fa-envelope-o fa-fw"></i>Chia sẻ lên Facebook</a>
+                                        {{-- <a href="#"><i class="fa fa-envelope-o fa-fw"></i>Chia sẻ lên Facebook</a> --}}
                                     </div>
                                     <div class="network-share">
                                     </div>
@@ -146,14 +148,14 @@
                         <div class="product-tab">
                             <ul class="nav-tab">
                                 <li class="active">
-                                    <a aria-expanded="false" data-toggle="tab" href="#product-detail">Product Details</a>
+                                    <a aria-expanded="false" data-toggle="tab" href="#product-detail">Chi tiết sản phẩm </a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a aria-expanded="true" data-toggle="tab" href="#information">information</a>
                                 </li>
                                 <li>
                                     <a data-toggle="tab" href="#reviews">reviews</a>
-                                </li>
+                                </li> --}}
                             </ul>
                             <div class="tab-container">
                                 <div id="product-detail" class="tab-panel active">

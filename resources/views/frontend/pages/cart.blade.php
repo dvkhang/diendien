@@ -8,23 +8,23 @@
         <div class="container" id="columns">
             <!-- breadcrumb -->
             <div class="breadcrumb clearfix">
-                <a class="home" href="#" title="Return to Home">Home</a>
+                <a class="home" href="#" title="Return to Home">Trang chủ </a>
                 <span class="navigation-pipe">&nbsp;</span>
-                <span class="navigation_page">Your shopping cart</span>
+                <span class="navigation_page">Giỏ hàng của bạn</span>
             </div>
             <!-- ./breadcrumb -->
             <!-- page heading-->
             <h2 class="page-heading no-line">
-                <span class="page-heading-title2">Shopping Cart Summary</span>
+                <span class="page-heading-title2">Tóm tắt đơn hàng</span>
             </h2>
             <!-- ../page heading-->
             <div class="page-content page-order">
                 <ul class="step">
-                    <li class="current-step"><span>01. Summary</span></li>
-                    <li><span>02. Sign in</span></li>
-                    <li><span>03. Address</span></li>
-                    <li><span>04. Shipping</span></li>
-                    <li><span>05. Payment</span></li>
+                    <li class="current-step"><span>01. Tóm tắt </span></li>
+                    <li><span>02. Đăng nhập</span></li>
+                    <li><span>03. Địa chỉ</span></li>
+                    <li><span>04. Vận chuyển</span></li>
+                    <li><span>05. Thanh toán</span></li>
                 </ul>
                 <div class="heading-counter warning">Giỏ hàng của bạn:
                     <span>{{$content->count()}} Sản phẩm</span>

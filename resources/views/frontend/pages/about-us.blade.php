@@ -24,19 +24,18 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12" id="contact_form_map">
                     <h3 class="page-subheading">Thông tin về chúng tôi</h3>
-                    <p>Lorem ipsum dolor sit amet onsectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor dapibus eget. Mauris tincidunt aliquam lectus sed vestibulum. Vestibulum bibendum suscipit mattis.</p>
+                    <p>Shop Việt Bắc bán hàng online các sản phẩm võ thuật phục vụ cho việc thi đấu và tập luyện võ thuật của các môn võ như Boxing, Kick - Boxing, Muay Thái, MMA, BJJ, Võ Cổ Truyền Việt Nam, Vovinam - Việt Võ Đạo, Karate, Taekwondo, Vịnh Xuân, Hồng Gia, Thái Lý Phật và các môn võ thuật khác.</p>
                     <br/>
                     <ul>
-                        <li>Praesent nec tincidunt turpis.</li>
-                        <li>Aliquam et nisi risus.&nbsp;Cras ut varius ante.</li>
-                        <li>Ut congue gravida dolor, vitae viverra dolor.</li>
+                        <li>HLV cao cấp: Võ sư - Phạm Viết Phương</li>
+                        <li>HLV trung cấp: Trần Đăng Khoa</li>
                     </ul>
                     <br/>
                     <ul class="store_info">
-                        <li><i class="fa fa-home"></i>Our business address is 1063 Freelon Street San Francisco, CA 95108</li>
-                        <li><i class="fa fa-phone"></i><span>+ 021.343.7575</span></li>
-                        <li><i class="fa fa-phone"></i><span>+ 020.566.6666</span></li>
-                        <li><i class="fa fa-envelope"></i>Email: <span><a href="mailto:%73%75%70%70%6f%72%74@%6b%75%74%65%74%68%65%6d%65.%63%6f%6d">support@kutetheme.com</a></span></li>
+                        <li><i class="fa fa-home"></i>Tổ dân phố 23, Đường cách mạng tháng 8, Tp.Thái Nguyên</li>
+                        <li><i class="fa fa-phone"></i><span>0977.016.6666</span></li>
+                        <li><i class="fa fa-phone"></i><span>0989.261.028</span></li>
+                        <li><i class="fa fa-envelope"></i>Email: <span><a href="mailto:%73%75%70%70%6f%72%74@%6b%75%74%65%74%68%65%6d%65.%63%6f%6d">vietphuongpham@gmail.com</a></span></li>
                     </ul>                
                     </div>
             </div>

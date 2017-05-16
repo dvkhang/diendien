@@ -10,7 +10,7 @@
         <div class="container" id="columns">
             <!-- breadcrumb -->
             <div class="breadcrumb clearfix">
-                <a class="home" href="#" title="Return to Home">Home</a>
+                <a class="home" href="#" title="Return to Home">Trang chủ</a>
                 <span class="navigation-pipe">&nbsp;</span>
                 <span class="navigation_page">{{$category->name}}</span>
             </div>
@@ -49,13 +49,13 @@
                     <!-- ./block category  -->
                     <!-- block filter -->
                     <div class="block left-module">
-                        <p class="title_block">Filter selection</p>
+                        <p class="title_block">Lựa chọn lọc</p>
                         <div class="block_content">
                             <!-- layered -->
                             <div class="layered layered-filter-price">
                         
                                 <!-- filter price -->
-                                <div class="layered_subtitle">price</div>
+                                <div class="layered_subtitle">Giá</div>
                             <div class="layered-content slider-range">
 
                                     <div data-label-reasult="Range:" data-min="0" data-max="50000000" data-unit="" class="slider-range-price" data-value-min="1000" data-value-max="5000000"></div>

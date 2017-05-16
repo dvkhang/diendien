@@ -232,7 +232,8 @@ class HomeController extends Controller
                 });
                 $query->where(function($query) use($key){
                     $query->where("name", "LIKE","%$key%")
-                        ->orWhere("description", "LIKE", "%$key%");
+                        ->orWhere("description", "LIKE", "%$key%")
+                        ->orWhere("summary", "LIKE", "%$key%");
                 });
             })->paginate(15);
 
@@ -241,7 +242,7 @@ class HomeController extends Controller
         $result=    Product::where(function($query) use ($key){
                 $query->where(function($query) use($key){
                     $query->where("name", "LIKE","%$key%")
-                        ->orWhere("description", "LIKE", "%$key%");
+                        ->orWhere("description", "LIKE", "%$key%")->orWhere("summary", "LIKE", "%$key%");
                 });
             })->paginate(15);
         return  view('frontend.pages.result-search', compact('result'));

@@ -56,7 +56,7 @@
                         <div class="col-xs-12">
 
                             <label for="address" class="required">Địa chỉ</label>
-                            <input type="text" class="input form-control" name="address" value="{{old('address')}}" id="address" required>
+                            <input type="text" class="input form-control" name="address" value="{{old('address')}}" id="address" required placeholder="Làng xã phường.....">
                             @if ($errors->has('address'))
                                 <p class="error">{{ $errors->first('address') }}</p>
                             @endif
